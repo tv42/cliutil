@@ -29,7 +29,7 @@ var Sum = sum{
 	Overview:    "Computes the sum of two integers, A and B.",
 }
 
-var _ = subcommands.FlagParser(&Sum)
+var _ subcommands.FlagParser = (*Sum)(nil)
 
 func init() {
 	subcommands.Register(&Sum)

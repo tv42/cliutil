@@ -16,7 +16,7 @@ type calc struct {
 // Calc is exported so the unit tests can inspect it.
 var Calc calc
 
-var _ = subcommands.FlagParser(&Calc)
+var _ subcommands.FlagParser = (*Calc)(nil)
 
 func init() {
 	Calc.BoolVar(&Calc.Config.Verbose, "v", false, "verbose output")
